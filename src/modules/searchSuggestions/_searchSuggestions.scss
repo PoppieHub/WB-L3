@@ -1,0 +1,19 @@
+.searchSuggestions {
+  display: flex;
+  align-items: baseline;
+  font-family: Helvetica, sans-serif;
+
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 550;
+  line-height: 24px;
+  margin-bottom: 30px;
+  padding-left: 51px;
+
+  &_1,&_2,&_3 {
+    padding: 4px 6px 8px 6px;
+    border-radius: 8px;
+    background-color: #f6f6fa;
+    max-width: 215px
+  }
+}

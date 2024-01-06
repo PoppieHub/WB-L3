@@ -27,3 +27,22 @@ export const formatPrice = (price: number) => {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'
   );
 };
+
+export const getRandom = (arr: string[] | any[], n: number) => {
+    let len = arr.length;
+
+    if (n > len) {
+        throw new RangeError("Exception in callback (getRandom) - взято больше элементов, чем доступно");
+    }
+
+    const result = new Array(n);
+    const taken = new Array(len);
+
+    while (n--) {
+        const x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len;
+    }
+    
+    return result;
+};
